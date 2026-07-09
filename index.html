@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body{
+            background: linear-gradient(135deg, #ff9ecb, #ffd6e8, #fff3c4);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20 px;
+        }
+        .card{
+            background: #faf3ed;
+            max-width: 1400px;
+            width: 80%;
+            padding: 50px 70px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,.15);
+        }
+        h1{
+            font-size: 60px;
+        }
+        .name{
+            color: #ff5fa2;
+        }
+        h2{
+            font-size: 28px;
+        }
+        p{
+            margin: 0 auto 35px;
+            font-size: 22px;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+        .gifts{
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
+        }
+        .gift{
+            width: 170px;
+            height: 170px;
+            background: #ff6b9d;
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 70px;
+            cursor: pointer;
+            transition: .3s;
+            color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,.2);
+        }
+        .gift span{
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        .gift:hover{
+            transform: translateY(-8px) scale(1.07);
+        }
+        .popup{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.75);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .popup-content{
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            position: relative;
+            max-width: 900px;
+            width: 90%;
+            animation: popup .35s ease;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+        @keyframes popup{
+            from{
+                opacity: 0;
+                transform: scale(.8);
+            }
+            to{
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .close{
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 35px;
+            cursor: pointer;
+        }
+        .gallery{
+            column-count: 3;
+            column-gap: 15px;
+            margin: 30px 0;
+        }
+        .gallery img{
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 18px;
+            cursor: pointer;
+            transition: .3s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: showPhoto .6s forwards;
+        }
+        .gallery img:nth-child(1){
+            animation-delay: .1s;
+        }
+        .gallery img:nth-child(2){
+            animation-delay: .2s;
+        }
+        .gallery img:nth-child(3){
+            animation-delay: .3s;
+        }
+        .gallery img:nth-child(4){
+            animation-delay: .4s;
+        }
+        .gallery img:nth-child(5){
+            animation-delay: .5s;
+        }
+        .gallery img:nth-child(6){
+            animation-delay: .6s;
+        }
+        @keyframes showPhoto{
+            from{
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .gallery img:hover{
+            transform: scale(1.03);
+        }
+        .hidden{
+            display: none;
+        }
+        #moreBtn{
+            margin-top: 20px;
+        }
+        #photoViewer{
+            flex-direction: column;
+        }
+        #bigPhoto{
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 20px;
+            animation: popup .3s;
+        }
+        .photo-close{
+            position: fixed;
+            top: 25px;
+            right: 35px;
+            font-size: 50px;
+            color: white;
+            z-index: 1001;
+        }
+        .note{
+            background: #fff5f8;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 25px;
+        }
+        .note p{
+            font-size: 24px;
+            margin: 20px 0;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1><b>My dear <i><span class="name">Milanka</span></i></b>, с днем рождения тебя!💋🎂</h1>
+        <p>
+
+        </p>
+        <h2>
+            Пусть каждый день будет наполнен радостью, смехом и счастьем. Пусть все твои мечты сбываются, а жизнь будет яркой и насыщенной!🎉
+        </h2>
+        <p>
+
+        </p>
+        <p>
+            Ну и по старинке, я тебя знаю уже больше трёх лет, и каждое твое день рождения я все больше замечаю, что ты взрослеешь. Это уже далеко не та девочка, которая учиться в пятом классе и у которой рвуться джинсы на коленке. Ты уже не та девочка, которой нельзя пойти в нижний за сисисьтиками (или как там они назывались). За тобой можно наблюдать вечно: как ты взрослеешь, красивеешь, ищешь себя, свой стиль, но для меня ты навсегда останешься той мелкой обезьяной, что на фотках рожу строит. Ты уже не маленькая девочка, что все время гуляла на 117, сейчас ты красивая длинноволосая девушка с прекрасными голубыми глазами. Я хочу тебе пожелать чтобы ты оставалась такой же красивой, веселой, порой капризной, но всегда такой же жизнерадостной. Главное чтоб оставалась девочкой за любой кипишь, а то мы еще с тобой на пробежку в 5 утра не сходили, рассвет не встретили, 50К шагов не прошли. Будь собой, заводи новые знакомства, цени каждый момент в жизни. Та и просто знай, вспоминай это каждый раз как будешь грустить: такой Миланы как ты не встретить больше нигде на этой планете. Среди всех восьми миллиардов людей такая Милана у меня одна. Может я бываю и грубая с тобой, но на самом деле я очень-очень рада, что в том далеком 2023, тем прохладным мартовским вечером познакомилась с тобой. Спасибо тебе, что ты у меня есть. Ты просто лучшая! А, чуть не забыла самое главное. Желаю чтоб на тебе не работали мои проклёны. Еще раз с днём рождения, открывай подарки ниже💋🎁 P.S. Made with ❤️by Anna.
+        </p>
+        <h2>Открывай подарки!🎁</h2>
+        <div class="gifts">
+            <div class="gift" onclick="openGallery()">
+                <span>Подарок 1</span>
+            </div>
+            <div class="gift" onclick="openSecret()">
+                <span>Подарок 2</span>
+            </div>
+        </div>
+    </div>
+    <div id="galleryWindow" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeGallery()">&times;</span>
+            <h1>Best Milania in the World</h1>
+            <div class="gallery">
+                <img src="images/photo1.jpg" onclick="openPhoto(this)">
+                <img src="images/photo2.jpg" onclick="openPhoto(this)">
+                <img src="images/photo3.jpg" onclick="openPhoto(this)">
+                <img src="images/photo4.jpg" onclick="openPhoto(this)">
+                <img src="images/photo5.jpg" onclick="openPhoto(this)">
+                <img src="images/photo6.jpg" onclick="openPhoto(this)">
+            </div>
+            <button id="moreBtn" onclick="showMorePhotos()">
+                🎀Показать остальные фото🎀
+            </button>
+            <div class="gallery hidden" id="morePhotos">
+                <img src="images/photo7.jpg" onclick="openPhoto(this)">
+                <img src="images/photo8.jpg" onclick="openPhoto(this)">
+                <img src="images/photo9.jpg" onclick="openPhoto(this)">
+                <img src="images/photo10.jpg" onclick="openPhoto(this)">
+                <img src="images/photo11.jpg" onclick="openPhoto(this)">
+                <img src="images/photo12.jpg" onclick="openPhoto(this)">
+            </div>
+        </div>
+    </div>
+    <div id="photoViewer" class="popup">
+        <span class="close photo-close" onclick="closePhoto()">&times;</span>
+        <img id="bigPhoto">
+    </div>
+    <div id="secretWindow" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeSecret()">&times;</span>
+            <h1>🎀Секретная записка</h1>
+            <div class="note">
+                <p><b>Сериал:</b> Отчаянные домохозяйки</p>
+                <p><b>Сезон:</b> 8</p>
+                <p><b>Серия:</b> 10</p>
+                <p><b>Минута:</b> 30:45</p>
+                <button onclick="showHint()">Показать подсказку👀</button>
+                <p id="hint" style="display:none; margin-top: 20px;">Зачем тебе подсказка? у тебя инета нету чтоб в гугле этот сериал найти?</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script>
+        function openGallery(){
+            document.getElementById("galleryWindow").style.display = "flex";
+        }
+        function closeGallery(){
+            document.getElementById("galleryWindow").style.display = "none";
+        }
+        function openSecret(){
+            document.getElementById("secretWindow").style.display = "flex";
+        }
+        function closeSecret(){
+            document.getElementById("secretWindow").style.display = "none";
+        }
+        function showMorePhotos(){
+            document.getElementById("morePhotos").style.display = "block";
+            document.getElementById("moreBtn").style.display = "none";
+        }
+        function openPhoto(photo){
+            document.getElementById("photoViewer").style.display = "flex";
+            document.getElementById("bigPhoto").src = photo.src;
+        }
+        function closePhoto(){
+            document.getElementById("photoViewer").style.display = "none";
+        }
+        function showHint(){
+            document.getElementById("hint").style.display = "block";
+        }
+        function party(){
+            confetti({
+                particleCount: 20,
+                spread: 80,
+                startVelocity: 30,
+                gravity: 0.5,
+                scalar: 1.1,
+                origin: { x: Math.random(), y: 0 }
+            });
+        }
+        window.onload = function(){
+            setInterval(party, 100);
+        }
+    </script>
+</body>
+</html>
